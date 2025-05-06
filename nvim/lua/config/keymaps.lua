@@ -17,3 +17,8 @@ keymap.set("n", "<leader>sv", ":vsplit<CR>", opts) -- Vertical
 keymap.set("n", "<leader>sh", ":split<CR>", opts) -- Horizontal
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", opts) -- Toggle Minimum
 
+-- Indenting
+keymap.set("v", "<", "<gv")
+keymap.set("v", ">", ">gv")
+
+
