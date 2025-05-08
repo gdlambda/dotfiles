@@ -2,6 +2,9 @@ local opts = {
 	ensure_installed = {
           		"efm",
 		"lua_ls",
+    "clangd",
+    "cpplint",
+    "clangd_format"
 	},
 	automatic_installation = true,
 }
