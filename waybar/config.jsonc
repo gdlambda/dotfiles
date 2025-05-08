@@ -7,34 +7,22 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "sway/window"
-    ],
-    "modules-center": [
         "hyprland/workspaces"
     ],
+    "modules-center": [
+        "clock"
+    ],
     "modules-right": [
-        "pulseaudio",
-	"network",
+	      "network",
         "power-profiles-daemon",
-        "cpu",
-        "memory",
         "temperature",
-        "backlight",
         "battery",
         "battery#bat2",
-        "clock"
     ],
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -43,11 +31,6 @@
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
         "states": {
@@ -87,35 +70,14 @@
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
     "hyprland/workspaces": {
 	"format": "{icon}",
 	"format-icons": {
-		"1": "",
-		"2": "",
-		"3": "",
-		"4": ""
+		"active": "󰺕",
+		"default": "",
 	},
        "persistent-workspaces": {
-             "*": 4 
+             "*": 5 
        }
     }
 }
