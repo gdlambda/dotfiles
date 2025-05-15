@@ -48,7 +48,8 @@ echo "Downloading necessary software..."
 # Download Zed Editor
 curl -f https://zed.dev/install.sh | sh
 # Download Zen Browser
-curl -L "https://github.com/zen-browser/desktop/releases/download/1.12.5b/zen-x86_64.AppImage" -o "$HOME/Apps/zen/zen.AppImage"
+curl -L "https://github.com/zen-browser/desktop/releases/download/1.12.5b/zen-x86_64.AppImage" -o "$HOME/Apps/zen/browser.AppImage"
+chmod +x $HOME/Apps/zen/browser.AppImage
 # Download Vivaldi
 sudo snap install vivaldi
 # switch to zsh
@@ -65,8 +66,8 @@ cd $HOME
 # Download nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
 chmod u+x nvim-linux-x86_64.appimage
-mkdir -p /opt/nvim
-mv nvim-linux-x86_64.appimage /opt/nvim/nvim
+sudo mkdir -p /opt/nvim
+sudo mv nvim-linux-x86_64.appimage /opt/nvim/nvim
 
 echo "Delete auto generated dotfiles..."
 # Delete old dotfiles
