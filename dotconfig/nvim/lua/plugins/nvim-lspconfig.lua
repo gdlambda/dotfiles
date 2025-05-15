@@ -47,25 +47,26 @@ local config = function()
 		},
 	})
 
-	-- typescript
+	-- typescript / javascript
 	lspconfig.ts_ls.setup({
 		on_attach = on_attach,
 		capabilities = capabilities,
 		filetypes = {
 			"typescript",
+			"javascript",
 		},
-		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+--		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	})
 
-  -- C++
-  lspconfig.clangd.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    cmd = {
-      "clangd",
-      "--offset-encoding=utf-16",
-    },
-  })
+	-- C++
+	lspconfig.clangd.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		cmd = {
+			"clangd",
+			"--offset-encoding=utf-16",
+		},
+	})
 
 	for type, icon in pairs(diagnostic_signs) do
 		local hl = "DiagnosticSign" .. type
@@ -78,7 +79,7 @@ local config = function()
 	local black = require("efmls-configs.formatters.black")
 	local eslint_d = require("efmls-configs.linters.eslint_d")
 	local prettierd = require("efmls-configs.formatters.prettier_d")
-  local cpplint = require("efmls-configs.linters.cpplint")
+	local cpplint = require("efmls-configs.linters.cpplint")
 	local clangformat = require("efmls-configs.formatters.clang_format")
 
 	-- configure efm server
@@ -87,8 +88,9 @@ local config = function()
 			"lua",
 			"python",
 			"typescript",
-      "c",
-      "cpp"
+      "javascript",
+			"c",
+			"cpp",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -103,6 +105,7 @@ local config = function()
 				lua = { luacheck, stylua },
 				python = { flake8, black },
 				typescript = { eslint_d, prettierd },
+        javascript = { eslint_d, prettierd },
 				c = { clangformat, cpplint },
 				cpp = { clangformat, cpplint },
 			},

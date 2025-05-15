@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Zen Browser
+Exec=/home/lambda/Apps/zen/browser.AppImage
+Icon=/home/lambda/Apps/zen/zenicon.png
+Terminal=false
+Categories=WebBrowser;
